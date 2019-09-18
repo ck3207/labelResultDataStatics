@@ -1,0 +1,109 @@
+# -*- coding: utf-8 -*-
+import xlwt
+
+from get_extreme_value import ExtremeValue
+
+__author__ = "chenk"
+
+
+class WriteDataToExcel:
+    """Read data and write to excel."""
+    def __init__(self):
+        self.wt = xlwt.Workbook()
+        self.table = self.wt.add_sheet("data")
+        self.x = 0
+        self.y = 0
+        self.absolutely_pos_x = 0
+        self.absolutely_pos_y = 0
+
+    def deal_data(self, data={}):
+        """Read data, and write to excel file.
+        You can see the final result via http://note.youdao.com/noteshare?
+        id=e201120deca6b428e8ebfc9be1672ac3&sub=36CB2F77F63942ABBE08A668C378C101"""
+        for table, info in data.items():
+            # table information
+            self.write_data("table_name", {"x": self.x, "y": self.y}, flag=True)
+            self.write_data(table, {"x": 1, "y": 0}, flag=False)
+            self.write_data("num", {"x": 1, "y": 0}, flag=False)
+            once_flag = False
+            for column, value_info in info.items():
+                # column fields
+                if not once_flag:
+                    temp = data[table][column]["num"]
+                    if isinstance(temp, int):
+                        self.write_data(temp, {"x": 1, "y": 0})
+                    else:
+                        self.write_data("暂不统计", {"x": 1, "y": 0})
+                    once_flag = True
+
+                    self.absolutely_pos_y += 1
+                    self.x = self.absolutely_pos_x
+                    self.y = self.absolutely_pos_y
+
+                    # column fields
+                    for column_field in ["column_name", "fund_account", "max_value", "interval_type",
+                                         "fund_account", "min_value", "interval_type", "NULL_value", "remark"]:
+                        self.write_data(column_field, {"x": self.x, "y": self.y}, flag=True)
+                        self.x += 1
+
+                    self.absolutely_pos_y += 1
+                    self.x = self.absolutely_pos_x
+                    self.y = self.absolutely_pos_y
+
+                # value fields
+                self.write_data(column, {"x": self.x, "y": self.y}, flag=True)
+                self.x += 1
+
+                self.absolutely_pos_x = self.x
+                self.absolutely_pos_y = self.y
+
+                temp_y = self.y
+                for key in ["max", "min", "null"]:
+                    # When key is null, then dealing specially.
+                    if key == "null" and len(data[table][column][key]) == 0:
+                        continue
+                    self.y = self.absolutely_pos_y
+                    for value in data[table][column][key]:
+                        self.x = self.absolutely_pos_x
+                        # When key is null, then dealing specially.
+                        if key == "null":
+                            self.write_data(value, {"x": self.x, "y": self.y}, flag=True)
+                            self.y += 1
+                            continue
+                        for i, column_value in enumerate(value):
+                            self.write_data(column_value, {"x": self.x, "y": self.y}, flag=True)
+                            self.x += 1
+                        self.y += 1
+                    self.absolutely_pos_x = self.x
+                # deal with the table is no data
+                if temp_y == self.y:
+                    self.y += 1
+                self.absolutely_pos_y = self.y
+                self.x, self.absolutely_pos_x = 0, 0
+        return self.wt.save("CaiDaDataAnalyse.xls")
+
+    def write_data(self, value, add_index={"x": 0, "y": 0}, flag=False):
+        """Write data to a cell. When flag is True, the cell means absolute position. (add_index["x], add_index["y"]) 
+        When the flag is False, the cell is relative position. (add_index["x"]+x, add_index["y"]+y)"""
+        value = str(value)
+        if flag:
+            print(add_index["y"], add_index["x"], value)
+            self.table.write(add_index["y"], add_index["x"], value)
+            return
+        else:
+            self.x += add_index["x"]
+            self.y += add_index["y"]
+            print(self.y, self.x, value)
+            # if self.x
+            self.table.write(self.y, self.x, value)
+
+    def add_index(self, add_value={"x": 0, "y": 0}):
+        pass
+        # self.x += add_value["x"]
+        # self.y += add_value["y"]
+
+if __name__ == "__main__":
+    data = ExtremeValue(part_init_date="20190628").load_data_from_pickle()
+    write_data_to_excel = WriteDataToExcel()
+    write_data_to_excel.deal_data(data)
+
