@@ -63,7 +63,7 @@ class ExtremeValue:
             for line in f.readlines():
                 if line.startswith("desc"):
                     table_name = line.split(" ")[-1][:-1]
-                elif line.startswith("="*5):
+                elif line.startswith("="*5) and "table分割线" in line:
                     self.table_columns[table_name] = columns
                     columns = []
                 elif line.startswith("#"):
@@ -176,6 +176,7 @@ class ExtremeValue:
         self.f_get_extreme_value = open(file_name, mode="w", encoding="utf-8")
         for table, columns in self.table_columns.items():
             # table_type = self.__distinguish_type(table)
+            self.generate_table_count_sql(f=self.f_get_extreme_value, table_name=table)
             if ExtremeValue.is_filter_table(table):
                 continue
             for column in columns:
@@ -253,25 +254,22 @@ class ExtremeValue:
 
         return sql_models
 
-    def generate_table_count_sql(self, file_name="get_table_count.sql"):
-        f = open(file=file_name, mode="w", encoding="utf-8")
-        for sql in self.__get_table_count_sql():
-            self.write_to_file(content=sql, f=f, need_transfer=True)
-            pass
+    def generate_table_count_sql(self, f, table_name):
+        sql = self.__get_table_count_sql(table_name=table_name)
+        self.__write_to_file(content="-- TableNum:{0}".format(table_name), f=f)
+        # self.__write_to_file(f=f, content="=" * 20 + "query_split" + "=" * 20)
+        self.write_to_file(content=sql, f=f, need_transfer=True)
 
 
-    def __get_table_count_sql(self):
-        sql_models = []
-        for table in self.table_columns.keys():
-            sql_model = "select count(1) from {0} ".format(table)
-            exist_columns = self.__is_columns_exist(table=table, columns=ExtremeValue.COLUMNS)
-            if exist_columns.get("part_init_date"):
-                sql_model += "where part_init_date = {0};".format(self.part_init_date)
-            else:
-                sql_model += ";"
-            sql_models.append(sql_model)
-
-        return sql_models
+    def __get_table_count_sql(self, table_name):
+        """Generate a sql which would know how many data in table."""
+        sql_model = "select count(1) from {0} ".format(table_name)
+        exist_columns = self.__is_columns_exist(table=table_name, columns=ExtremeValue.COLUMNS)
+        if exist_columns.get("part_init_date"):
+            sql_model += "where part_init_date = {0};".format(self.part_init_date)
+        else:
+            sql_model += ";"
+        return sql_model
 
     def __distinguish_type(self, table):
         """Distinguish table and return a type for function get_extreme_value_sql_model argue type.
@@ -334,8 +332,8 @@ if __name__ == "__main__":
     table_file = config.get(section=sec, option="jobs")
 
     extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file)
-    extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
-    # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
-    # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    # extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
+    # print(columns_file.replace(".sql", ".log"))
+    extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
+    extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
     # extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
-    #
