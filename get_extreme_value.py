@@ -88,14 +88,23 @@ class ExtremeValue:
             if line == "":
                 f.close()
                 break
+            if "TableNum" in line:
+                insert_data = "num"
+                num = 0
+                continue
+            if insert_data == "num":
+                num = int(line.strip())
+                insert_data = ""
+                continue
+
             if not table or not column:
                 if line.startswith("--"):
                     db_table_column = line.split(" ")[-1].strip()
                     db, table, column = db_table_column.split(".")
                     if not self.results.get(table):
-                        self.results[table] = {column: {"max": [], "min": [], "null": [], "num": "暂无统计"}}
+                        self.results[table] = {column: {}, "num": num}
                     # column = re.search("([\w_]*) as", f.readline()).group(1)
-                    self.results[table][column] = {"max": [], "min": [], "null": [], "num": "暂无统计"}
+                    self.results[table][column] = {"max": [], "min": [], "null": []}
                     insert_data = "max"
                 continue
             if "column_split" in line or "table_split" in line:
@@ -334,6 +343,6 @@ if __name__ == "__main__":
     extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file)
     # extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
     # print(columns_file.replace(".sql", ".log"))
-    extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
-    extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
-    # extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
+    # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
+    # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    print(extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log")))
