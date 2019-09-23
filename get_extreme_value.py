@@ -15,12 +15,12 @@ class ExtremeValue:
                       "stock_type", "exchange_type", "business_flag", "money_type", "score_type"]
     COLUMNS = ["fund_account", "interval_type", "part_init_date"]
 
-    def __init__(self, date):
-        self.f_get_columns = open("get_columns.sql", mode="w", encoding="utf-8")
-        self.f_get_extreme_value = open("get_extreme.sql", mode="w", encoding="utf-8")
+    def __init__(self, part_init_date, columns_file, extreme_value_file):
+        self.get_columns_file = columns_file
+        self.get_extreme_value_file = extreme_value_file
         self.table_columns = {}
         self.sql_models = {}
-        self.part_init_date = date
+        self.part_init_date = part_init_date
         self.results = {}
 
     def get_tables_from_file(self, file_name="tables.txt"):
@@ -35,9 +35,10 @@ class ExtremeValue:
 
         return tables
 
-    def generate_get_columns_hive_sql(self, table_file="tables.txt", keyword="acct_wt_"):
+    def generate_get_columns_hive_sql(self, table_file="tables.txt", keyword="acct_wt_", file_name="get_columns.sql"):
         """Organize and generate a description SQL file."""
         # tables = ExtremeValue.JOBS
+        self.f_get_columns = open(file_name, mode="w", encoding="utf-8")
         tables = self.get_tables_from_file(file_name=table_file)
         for job in tables:
             if job.startswith(keyword):
@@ -142,13 +143,13 @@ class ExtremeValue:
                 if need_transfer:
                     self.__write_to_file(f, _content)
                 f.write(_content+"\n")
-                self.__write_to_file(f=self.f_get_extreme_value, content=query_split)
+                self.__write_to_file(f=f, content=query_split)
         elif isinstance(content, str):
             _content = content.replace("'--'", '"""--"""')
             if need_transfer:
                 self.__write_to_file(f, _content)
             f.write(_content + "\n")
-            self.__write_to_file(f=self.f_get_extreme_value, content=query_split)
+            self.__write_to_file(f=f, content=query_split)
 
     def __write_to_file(self, f, content):
         """Write to content to a file. However, content will be selected not executed ."""
@@ -171,7 +172,8 @@ class ExtremeValue:
         """Close file which was opened."""
         f.close()
 
-    def generate_get_extreme_value_sql(self):
+    def generate_get_extreme_value_sql(self, file_name):
+        self.f_get_extreme_value = open(file_name, mode="w", encoding="utf-8")
         for table, columns in self.table_columns.items():
             # table_type = self.__distinguish_type(table)
             if ExtremeValue.is_filter_table(table):
@@ -251,6 +253,26 @@ class ExtremeValue:
 
         return sql_models
 
+    def generate_table_count_sql(self, file_name="get_table_count.sql"):
+        f = open(file=file_name, mode="w", encoding="utf-8")
+        for sql in self.__get_table_count_sql():
+            self.write_to_file(content=sql, f=f, need_transfer=True)
+            pass
+
+
+    def __get_table_count_sql(self):
+        sql_models = []
+        for table in self.table_columns.keys():
+            sql_model = "select count(1) from {0} ".format(table)
+            exist_columns = self.__is_columns_exist(table=table, columns=ExtremeValue.COLUMNS)
+            if exist_columns.get("part_init_date"):
+                sql_model += "where part_init_date = {0};".format(self.part_init_date)
+            else:
+                sql_model += ";"
+            sql_models.append(sql_model)
+
+        return sql_models
+
     def __distinguish_type(self, table):
         """Distinguish table and return a type for function get_extreme_value_sql_model argue type.
         table_type = 0, a full sql model. It contain fund_account, max/min value and interval_type.
@@ -304,13 +326,16 @@ if __name__ == "__main__":
     except IndexError as e:
         sec = "caida"
 
-    # caida
+    # get config info
     config = __get_config(sec)
     part_init_date = int(config.get(section=sec, option="part_init_date"))
-    extreme_value = ExtremeValue(part_init_date=part_init_date)
+    columns_file = config.get(section=sec, option="columns_file")
+    extreme_file = config.get(section=sec, option="extreme_file")
     table_file = config.get(section=sec, option="jobs")
-    extreme_value.generate_get_columns_hive_sql(table_file=table_file)
-    extreme_value.extract_columns_from_log(file_name="get_columns.log")
-    extreme_value.generate_get_extreme_value_sql()
-    extreme_value.extract_extreme_value_from_log()
 
+    extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file)
+    extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
+    # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
+    # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    # extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
+    #
