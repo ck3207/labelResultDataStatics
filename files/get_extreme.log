@@ -1,0 +1,40 @@
+-- TableNum:wt_customer.acct_wt_user_max_loss_profit
+1
+-- wt_customer.acct_wt_user_hold_cycle_merge_list.asset_prop
+select fund_account, asset_prop as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by asset_prop desc limit 1
+10700183	7	--
+====================query_split====================
+select fund_account, asset_prop as min_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by asset_prop asc limit 1
+10001102	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628   and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_hold_cycle_merge_list.stock_name
+select fund_account, stock_name as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by stock_name desc limit 1
+833002290	ＳＯＨＯ中国	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628   and end_flag is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_max_loss_profit
+10
+-- wt_customer.acct_wt_user_hold_cycle_merge.asset_prop
+select fund_account, asset_prop as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by asset_prop desc limit 1
+10700183	71	--
+====================query_split====================
+select fund_account, asset_prop as min_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by asset_prop asc limit 1
+10001102	10	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628   and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_hold_cycle_merge.stock_name
+select fund_account, stock_name as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by stock_name desc limit 1
+833002290	ＳＯＨＯ中国1	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628   and end_flag is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
