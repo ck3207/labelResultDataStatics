@@ -306,14 +306,14 @@ class ExtremeValue:
                 is_exist[column] = True
         return is_exist
 
-    def dump_data_to_pickle(self, data):
+    def dump_data_to_pickle(self, data, filename="data.pkl"):
         """Dump data to pickle file."""
-        with open(file="data.pkl", mode="wb") as f:
+        with open(file=filename, mode="wb") as f:
             pickle.dump(data, f)
 
-    def load_data_from_pickle(self):
+    def load_data_from_pickle(self, filename="data.pkl"):
         """Load Data From Pickle File."""
-        with open(file="data.pkl", mode="rb") as f:
+        with open(file=filename, mode="rb") as f:
             return pickle.load(f)
 
 
@@ -345,4 +345,4 @@ if __name__ == "__main__":
     # print(columns_file.replace(".sql", ".log"))
     # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
     # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
-    print(extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log")))
+    extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
