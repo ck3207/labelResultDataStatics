@@ -108,7 +108,6 @@ class WriteDataToExcel:
             return pickle.load(f)
 
 
-
 if __name__ == "__main__":
     write_data_to_excel = WriteDataToExcel(book_name="Demo.xls")
     data = write_data_to_excel.load_data_from_pickle(filename="data.pkl")

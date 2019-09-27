@@ -15,13 +15,15 @@ class ExtremeValue:
                       "stock_type", "exchange_type", "business_flag", "money_type", "score_type"]
     COLUMNS = ["fund_account", "interval_type", "part_init_date"]
 
-    def __init__(self, part_init_date, columns_file, extreme_value_file):
+    def __init__(self, part_init_date, columns_file, extreme_value_file, distribution_statistics_file):
         self.get_columns_file = columns_file
         self.get_extreme_value_file = extreme_value_file
+        self.distribution_statistics_file = distribution_statistics_file
         self.table_columns = {}
         self.sql_models = {}
         self.part_init_date = part_init_date
         self.results = {}
+        self.distribution_statistics = {}
 
     def get_tables_from_file(self, file_name="tables.txt"):
         tables = []
@@ -182,32 +184,36 @@ class ExtremeValue:
         f.close()
 
     def generate_get_extreme_value_sql(self, file_name):
-        self.f_get_extreme_value = open(file_name, mode="w", encoding="utf-8")
+        f_get_extreme_value = open(file_name, mode="w", encoding="utf-8")
         for table, columns in self.table_columns.items():
             # table_type = self.__distinguish_type(table)
-            self.generate_table_count_sql(f=self.f_get_extreme_value, table_name=table)
+            self.generate_table_count_sql(f=f_get_extreme_value, table_name=table)
             if ExtremeValue.is_filter_table(table):
                 continue
+            self.distribution_statistics[table] = {}  # 统计数据模板构造
             for column in columns:
                 if ExtremeValue.is_filter_column(column):
                     continue
-                self.__write_to_file(f=self.f_get_extreme_value, content="-- {0}.{1}".format(table, column))
+                self.distribution_statistics[table][column] = []    # 统计数据模板构造
+                self.__write_to_file(f=f_get_extreme_value, content="-- {0}.{1}".format(table, column))
                 # get target sql of extreme value
                 extreme_value_sql = self.__get_extreme_value_sql(table=table, column=column)
                 # write sql to a file
-                self.write_to_file(content=extreme_value_sql, f=self.f_get_extreme_value, need_transfer=True)
+                self.write_to_file(content=extreme_value_sql, f=f_get_extreme_value, need_transfer=True)
                 # get sql which to judge whether there is a null value or not
                 null_sql = self._get_is_null_sql(table=table, column=column)
                 # write sql to a file
-                self.write_to_file(content=null_sql, f=self.f_get_extreme_value, need_transfer=True)
-                self.__write_to_file(f=self.f_get_extreme_value, content="=" * 20 + "column_split" + "=" * 20)
-            self.__write_to_file(f=self.f_get_extreme_value, content="=" * 20 + "table_split" + "=" * 20)
-        self.f_get_extreme_value.close()
+                self.write_to_file(content=null_sql, f=f_get_extreme_value, need_transfer=True)
+                self.__write_to_file(f=f_get_extreme_value, content="=" * 20 + "column_split" + "=" * 20)
+            self.__write_to_file(f=f_get_extreme_value, content="=" * 20 + "table_split" + "=" * 20)
+        self.dump_data_to_pickle(data=self.distribution_statistics, filename="distributition_statistics_model.pkl")
+        f_get_extreme_value.close()
 
     def __get_extreme_value_sql(self, table, column):
-        sql_models = []
+        sql_models = []  # 根据字段生成的SQL 列表
         exist_columns = self.__is_columns_exist(table=table, columns=ExtremeValue.COLUMNS)
         interval_type_flag = exist_columns.get("interval_type")
+        self.__get_distribution_statistics_sql_model(table=table, column=column, exist_columns=exist_columns)
         for max_or_min in ["max", "min"]:
             sort = "asc"
             if max_or_min == "max":
@@ -230,10 +236,63 @@ class ExtremeValue:
                     sql_model += "where interval_type = {0} ".format(interval_type)
                 sql_model += "order by {0} {1} limit 1;".format(column, sort)
                 sql_models.append(sql_model)
-                if not interval_type_flag:
+                if not interval_type_flag:  # 这里看起来有bug
                     break
-
         return sql_models
+
+    def generate_distribution_statistics_sql(self, file_name):
+        """根据分段统计数据的模板， 生成实际的执行sql"""
+        f_distribution_statistics = open(file=file_name, mode="w", encoding="utf-8")
+        sql_models = dict(self.load_data_from_pickle("distributition_statistics_model.pkl"))
+        models = []
+        for table in sql_models.keys():
+            for column in sql_models.get(table).keys():
+                data_index = 0
+                for sql in sql_models.get(table).get(column):
+                    data_index += 1
+                    for min_value, max_value in self.__get_columns_value(table, column, data_index):
+                        execute_sql = sql.format(min_value, max_value)
+                        models.append(execute_sql)
+                        print("Execute SQL:", execute_sql)
+        f_distribution_statistics.close()
+
+    def __get_columns_value(self, table, column, data_index, file_name="data.pkl", pieces=10):
+        """获取写入pkl文件中的表字段的极值数据"""
+        columns_value = dict(self.load_data_from_pickle(file_name))
+        min_value = float(columns_value.get(table.split(".")[0]).get(column).get("min")[data_index])
+        max_value = float(columns_value.get(table.split(".")[0]).get(column).get("min")[data_index])
+        return self.__get_pieces(min_value=min_value, max_value=max_value, pieces=pieces)
+
+    def __get_pieces(self, min_value, max_value, pieces):
+        """根据入参的最大最小值，平均划分成 若干组数据"""
+        pieces = []
+        if isinstance(min_value, float) and isinstance(max_value, float):
+            differentials = max_value - min_value
+            differentials_piece = differentials / pieces
+        for i in range(1, 11):
+            pieces.append((min_value, min_value*(differentials_piece * i)))
+
+        return pieces
+
+    def __get_distribution_statistics_sql_model(self, table, column, exist_columns):
+        """根据表字段信息，生成一个获取分段统计数据的模板
+        eg：select count(1) from table where part_init_date = xxx 
+        and interval_type = 1 and column value between 1 and 1000; """
+        self.distribution_statistics[table][column] = []
+        init_sql = "select count(1) from {0} where ".format(table)
+        sql_model = init_sql
+        if exist_columns.get("part_init_date"):
+            sql_model += "part_init_date = {0} and ".format(self.part_init_date)
+        if exist_columns.get("interval_type"):
+            sql_model += "interval_type = 1 and ".format()
+        sql_model += "%s between {1} and {2} ;" % column
+        self.distribution_statistics[table][column].append(sql_model)
+        if exist_columns.get("interval_type"):
+            for interval_type in ["2", "3", "4"]:
+                tmp_sql = sql_model.replace("interval_type = 1", "interval_type = {0}".format(interval_type))
+                self.distribution_statistics[table][column].append(tmp_sql)
+
+        return
 
     def _get_is_null_sql(self, table, column):
         sql_models = []
@@ -339,10 +398,12 @@ if __name__ == "__main__":
     columns_file = config.get(section=sec, option="columns_file")
     extreme_file = config.get(section=sec, option="extreme_file")
     table_file = config.get(section=sec, option="jobs")
+    distribution_statistics_file = config.get(section=sec, option="distribution_statistics_file")
 
-    extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file)
+    extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file, distribution_statistics_file)
     # extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
     # print(columns_file.replace(".sql", ".log"))
-    # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
-    # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
-    extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
+    extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
+    extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    extreme_value.generate_distribution_statistics_sql(file_name=distribution_statistics_file)
+    # extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))

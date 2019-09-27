@@ -1,0 +1,614 @@
+desc wt_customer.acct_wt_user_client_info
+init_date           	string              	????                
+client_id           	string              	??ID                
+fund_account        	string              	????                
+client_name         	string              	????                
+open_date           	string              	????                
+open_time           	string              	?????????           
+open_date1          	string              	????                
+birthday            	string              	????                
+age                 	string              	??                  
+age_title           	string              	????                
+corp_risk_level     	string              	??????              
+fundacct_status     	string              	??????              
+client_rights       	string              	????                
+mobile_tel          	string              	????                
+branch_no           	string              	????                
+belong_branch       	string              	??????              
+open_branch_area    	string              	?????               
+company_name        	string              	????                
+client_gender       	string              	????                
+====================table分割线====================
+desc wt_customer.acct_wt_user_businesspermission
+fund_account        	string              	????                
+init_date           	string              	????                
+business_permission 	string              	????                
+====================table分割线====================
+desc wt_customer.acct_wt_user_account_income_balance_dmp
+init_date           	string              	????                
+fund_account        	string              	????                
+accumulative_income_balance	decimal(19,4)       	?????               
+avg_income_balance  	decimal(19,4)       	?????               
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_activity
+fund_account        	string              	????                
+init_date           	decimal(10,0)       	????                
+activity            	decimal(4,0)        	???                 
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_accumulative_total_asset
+fund_account        	string              	                    
+total_asset         	decimal(19,2)       	                    
+accumulate_total_asset	decimal(19,2)       	                    
+count_total_asset   	int                 	                    
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_single_inside_market_value
+fund_account        	string              	????                
+market_value        	decimal(19,2)       	????                
+stock_code          	string              	????                
+init_date           	string              	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_ETF_market_value
+fund_account        	string              	????                
+init_date           	string              	????                
+tef_market_value    	decimal(19,4)       	ETF????             
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_sign_outside_fund_market_value
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+total_fund_day_income_balance	decimal(19,4)       	?????????           
+prod_code           	string              	                    
+prodta_no           	string              	                    
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_single_stock_market_value
+init_date           	string              	????                
+fund_account        	string              	????                
+total_market_value  	decimal(19,4)       	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_treasury_bond
+fund_account        	string              	????                
+init_date           	decimal(10,0)       	????                
+treasury_bond       	decimal(19,4)       	???????             
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_fund_market_value
+fund_account        	string              	????                
+fund_opfund_market_value	decimal(19,2)       	?????               
+init_date           	string              	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_daily_convertible_bond_market_value
+fund_account        	string              	????                
+init_date           	string              	????                
+market_value        	decimal(10,2)       	?????               
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_prod_total_market_value
+fund_account        	string              	????                
+init_date           	string              	????                
+total_prod_market_value	decimal(10,2)       	???????             
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_revenue_voucher
+fund_account        	string              	????                
+init_date           	string              	????                
+fund_market_value   	decimal(10,2)       	??????              
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_fund_prod_total_market_value
+fund_account        	string              	????                
+init_date           	string              	????                
+fund_market_value   	decimal(10,2)       	????????            
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_day_bank_market_value
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+day_bank_value      	decimal(19,4)       	????????            
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_day_uncome_balance
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+day_uncome_balance  	decimal(19,4)       	??????              
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_daily_bond_total_market_value
+fund_account        	string              	????                
+init_date           	string              	????                
+total_market_value  	decimal(10,2)       	?????               
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_banktransfer
+fund_account        	string              	????                
+occur_balance       	decimal(19,2)       	????                
+init_date           	string              	????                
+business_flag       	string              	????:2041??,2042??  
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_money_in_out_dmp
+init_date           	string              	????                
+fund_account        	string              	????                
+money_in            	decimal(19,4)       	????                
+money_out           	decimal(19,4)       	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_unused_fund_rate
+init_date           	string              	????                
+fund_account        	string              	????                
+unused_fund_rate    	decimal(19,4)       	?????               
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_day_business_balance_in
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+day_business_balance_in	decimal(19,4)       	????????            
+accumulate_business_balance_in	decimal(19,4)       	????????            
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_other_market_value
+fund_account        	string              	????                
+other_market_value  	decimal(19,4)       	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_hold_cycle_num
+init_date           	decimal(10,0)       	????                
+fund_account        	decimal(19,0)       	????                
+money_type          	int                 	????                
+stock_hold_cycle_num	int                 	???????             
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_total_cumulative_fare_rencent
+init_date           	string              	????                
+fund_account        	string              	????                
+total_fare          	decimal(19,4)       	??????              
+stock_type          	string              	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_max_loss_stock
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+total_income_balance	decimal(19,4)       	??????              
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_year_income_balance
+fund_account        	string              	????                
+init_date           	decimal(10,0)       	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+income_balance      	decimal(19,2)       	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_single_inside_day_fund_profit
+fund_account        	string              	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+day_profit          	decimal(19,2)       	???                 
+init_date           	string              	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_inside_fund_float_balance
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+market_value        	decimal(19,4)       	???????????         
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_single_outside_day_fund_profit
+fund_account        	string              	????                
+day_profit          	decimal(19,2)       	???                 
+prod_code           	string              	????                
+prodta_no           	string              	??????              
+init_date           	decimal(10,0)       	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_hold_cycle_winrate
+fund_account        	string              	????                
+init_date           	string              	????                
+win_rate            	decimal(19,4)       	??                  
+win_rate_type       	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_loss_day
+fund_account        	string              	????                
+init_date           	string              	????                
+profit_day          	decimal(4,0)        	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_profit_day
+fund_account        	string              	????                
+init_date           	string              	????                
+profit_day          	decimal(4,0)        	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_treasury_bonds_income
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+income_balance      	decimal(19,4)       	????                
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_max_profit_stock
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+total_income_balance	decimal(19,4)       	??????              
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_industry_block
+firstindustrycode   	string              	??????              
+firstindustryname   	string              	??????              
+companycode         	int                 	????                
+industry            	int                 	????                
+secucode            	string              	????                
+====================table分割线====================
+desc wt_customer.acct_wt_user_good_at_stock
+fund_account        	string              	????                
+stock_code          	string              	????                
+stock_type          	string              	????                
+exchange_type       	string              	????                
+cycle_count         	decimal(10,0)       	????                
+win_count           	decimal(10,0)       	????                
+win_ratio           	decimal(10,4)       	??                  
+init_date           	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_float_share_preference
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+small_rate          	decimal(19,4)       	??????              
+mid_rate            	decimal(19,4)       	??????              
+big_rate            	decimal(19,4)       	??????              
+preference          	string              	??????              
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_second_industry_dmp
+fund_account        	string              	????                
+industry_preference 	string              	????                
+secondindustrycode  	string              	????                
+day_industry_num    	decimal(10,0)       	?????               
+accumulate_industry_num	decimal(10,0)       	??????              
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_trans_boldness_score
+fund_account        	string              	????                
+score               	decimal(10,2)       	????                
+score_type          	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stable_income_score
+fund_account        	string              	????                
+score               	decimal(10,2)       	????                
+score_type          	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_sharperatio
+fund_account        	string              	????                
+sharpe_ratio        	decimal(19,4)       	????                
+init_date           	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_monthyield
+fund_account        	string              	????                
+month_cost          	decimal(19,4)       	?????               
+month_cost_sum      	decimal(19,4)       	?????               
+month_yield         	decimal(19,4)       	????                
+income_balance_sum  	decimal(19,4)       	????                
+count               	int                 	??????              
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_yearyield
+fund_account        	string              	????                
+year_cost           	decimal(19,4)       	?????               
+year_cost_sum       	decimal(19,4)       	?????               
+year_yield          	decimal(19,4)       	????                
+income_balance_sum  	decimal(19,4)       	????                
+count               	int                 	??????              
+part_init_date      	string              	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_high_position
+fund_account        	string              	????                
+position            	decimal(19,4)       	????                
+position_date       	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_lowest_position
+fund_account        	string              	????                
+position            	decimal(19,4)       	????                
+position_date       	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_stock_hold_line_type
+init_date           	decimal(10,0)       	????                
+fund_account        	string              	????                
+super_short_rate    	decimal(19,4)       	???????             
+short_rate          	decimal(19,4)       	??????              
+medium_rate         	decimal(19,4)       	??????              
+long_rate           	decimal(19,4)       	??????              
+stock_hold_line_type	string              	?????? 0:????? 1:????    2:????    3:????    
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+desc wt_customer.acct_wt_user_income_level
+fund_account        	string              	????                
+income_level        	string              	????                
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+part_init_date      	string              	                    
+interval_type       	int                 	                    
+====================table分割线====================
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
