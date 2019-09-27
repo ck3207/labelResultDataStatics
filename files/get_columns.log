@@ -3,14 +3,22 @@ init_date           	decimal(10,0)       	????
 fund_account        	decimal(19,0)       	????                
 max_loss            	decimal(19,4)       	????                
 max_profit          	decimal(19,4)       	????                
-part_init_date      	string              	                    
-interval_type       	string              	                    
-	 	 
-# Partition Information	 	 
-# col_name            	data_type           	comment             
-	 	 
-part_init_date      	string              	                    
-interval_type       	string              	                    
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_max_loss
+init_date           	decimal(10,0)       	????
+fund_account        	decimal(19,0)       	????
+max_loss            	decimal(19,4)       	????
+max_profit          	decimal(19,4)       	????
+part_init_date      	string
+interval_type       	string
+
+# Partition Information
+# col_name            	data_type           	comment
+
+part_init_date      	string
+interval_type       	string
 ====================query_split====================
 ====================table分割线====================
 ====================query_split====================

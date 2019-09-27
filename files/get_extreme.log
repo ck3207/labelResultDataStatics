@@ -1,40 +1,94 @@
 -- TableNum:wt_customer.acct_wt_user_max_loss_profit
-1
--- wt_customer.acct_wt_user_hold_cycle_merge_list.asset_prop
-select fund_account, asset_prop as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by asset_prop desc limit 1
-10700183	7	--
+111
+-- wt_customer.acct_wt_user_max_loss_profit.max_loss
+select fund_account, max_loss as max_value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628 order by max_loss desc limit 1
+10700183	12127	--
 ====================query_split====================
-select fund_account, asset_prop as min_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by asset_prop asc limit 1
+select fund_account, max_loss as min_value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628 order by max_loss asc limit 1
 10001102	0	--
 ====================query_split====================
-select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628   and asset_prop is null limit 1
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628   and max_loss is null limit 1
 ====================query_split====================
 ====================column_split====================
--- wt_customer.acct_wt_user_hold_cycle_merge_list.stock_name
-select fund_account, stock_name as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628 order by stock_name desc limit 1
-833002290	ＳＯＨＯ中国	--
+-- wt_customer.acct_wt_user_max_loss_profit.max_profit
+select fund_account, max_profit as max_value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628 order by max_profit desc limit 1
+833002290	1121200	--
 ====================query_split====================
-select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge_list where part_init_date = 20190628   and end_flag is null limit 1
+select fund_account, max_profit as min_value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628 order by max_profit asc limit 1
+10001102	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_max_loss_profit where part_init_date = 20190628   and max_profit is null limit 1
 ====================query_split====================
 ====================column_split====================
 ====================table_split====================
--- TableNum:wt_customer.acct_wt_user_max_loss_profit
-10
--- wt_customer.acct_wt_user_hold_cycle_merge.asset_prop
-select fund_account, asset_prop as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by asset_prop desc limit 1
-10700183	71	--
+-- TableNum:wt_customer.acct_wt_user_max_loss
+178
+-- wt_customer.acct_wt_user_max_loss.max_loss
+select fund_account, max_loss as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 1 order by max_loss desc limit 1
+10700183	12127	1
 ====================query_split====================
-select fund_account, asset_prop as min_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by asset_prop asc limit 1
-10001102	10	--
+select fund_account, max_loss as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 1 order by max_loss asc limit 1
+10001102	0	1
 ====================query_split====================
-select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628   and asset_prop is null limit 1
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 1 and max_loss is null limit 1
+====================query_split====================
+select fund_account, max_loss as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 2 order by max_loss desc limit 1
+10700183	121127	2
+====================query_split====================
+select fund_account, max_loss as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 2 order by max_loss asc limit 1
+10001102	10	2
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 2 and max_loss is null limit 1
+====================query_split====================
+select fund_account, max_loss as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 3 order by max_loss desc limit 1
+10700183	1231127	3
+====================query_split====================
+select fund_account, max_loss as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 3 order by max_loss asc limit 1
+10001102	1120	3
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 3 and max_loss is null limit 1
+====================query_split====================
+select fund_account, max_loss as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 4 order by max_loss desc limit 1
+10700183	1212127	4
+====================query_split====================
+select fund_account, max_loss as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 4 order by max_loss asc limit 1
+10001102	110	4
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_loss where part_init_date = 20190628 and interval_type = 4 and max_loss is null limit 1
 ====================query_split====================
 ====================column_split====================
--- wt_customer.acct_wt_user_hold_cycle_merge.stock_name
-select fund_account, stock_name as max_value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628 order by stock_name desc limit 1
-833002290	ＳＯＨＯ中国1	--
+-- wt_customer.acct_wt_user_max_loss.max_profit
+select fund_account, max_profit as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 1 order by max_profit desc limit 1
+10700183	12127	1
 ====================query_split====================
-select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_hold_cycle_merge where part_init_date = 20190628   and end_flag is null limit 1
+select fund_account, max_profit as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 1 order by max_profit asc limit 1
+10001102	0	1
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 1 and max_profit is null limit 1
+====================query_split====================
+select fund_account, max_profit as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 2 order by max_profit desc limit 1
+10700183	121127	2
+====================query_split====================
+select fund_account, max_profit as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 2 order by max_profit asc limit 1
+10001102	10	2
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 2 and max_profit is null limit 1
+====================query_split====================
+select fund_account, max_profit as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 3 order by max_profit desc limit 1
+10700183	1231127	3
+====================query_split====================
+select fund_account, max_profit as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 3 order by max_profit asc limit 1
+10001102	1120	3
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 3 and max_profit is null limit 1
+====================query_split====================
+select fund_account, max_profit as max_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 4 order by max_profit desc limit 1
+10700183	1212127	4
+====================query_split====================
+select fund_account, max_profit as min_value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 4 order by max_profit asc limit 1
+10001102	110	4
+====================query_split====================
+select fund_account, null as value, interval_type as interval_type from wt_customer.acct_wt_user_max_profit where part_init_date = 20190628 and interval_type = 4 and max_profit is null limit 1
 ====================query_split====================
 ====================column_split====================
 ====================table_split====================
