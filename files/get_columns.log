@@ -1,26 +1,728 @@
-desc wt_customer.acct_wt_user_max_loss_profit
-init_date           	decimal(10,0)       	????                
-fund_account        	decimal(19,0)       	????                
-max_loss            	decimal(19,4)       	????                
-max_profit          	decimal(19,4)       	????                
+desc wt_customer.acct_wt_user_account_trans_volume
+fund_account	string	
+trans_volume	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
 ====================query_split====================
 ====================table分割线====================
 ====================query_split====================
-desc wt_customer.acct_wt_user_max_loss
-init_date           	decimal(10,0)       	????
-fund_account        	decimal(19,0)       	????
-max_loss            	decimal(19,4)       	????
-max_profit          	decimal(19,4)       	????
-part_init_date      	string
-interval_type       	string
-
-# Partition Information
-# col_name            	data_type           	comment
-
-part_init_date      	string
-interval_type       	string
+desc wt_customer.acct_wt_user_all_score
+fund_account	string	
+score	decimal(10,2)	
+part_init_date	string	
+interval_type	int	
+score_type	int	
 ====================query_split====================
 ====================table分割线====================
 ====================query_split====================
-WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
-WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+desc wt_customer.acct_wt_user_antirisk_ability
+fund_account	string	
+anti_risk_ability	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_asset
+fund_account	string	
+last_asset	decimal(19,4)	
+total_asset	decimal(19,4)	
+income_balance	decimal(19,4)	
+total_in	decimal(19,4)	
+asset_in	decimal(19,4)	
+asset_out	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_avg_position
+fund_account	string	
+sum_position	decimal(19,4)	
+avg_position	decimal(19,4)	
+count	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_avg_position_rank
+fund_account	string	
+avg_position	decimal(19,4)	
+avg_position_rank_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_avg_stock_hold_days
+fund_account	string	
+asset_prop	string	
+hold_days	decimal(19,4)	
+avg_hold_days_rank_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_block_income_percent
+fund_account	string	
+asset_prop	string	
+second_industry_code	string	
+second_industry_name	string	
+block_income	decimal(19,4)	
+block_income_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_block_trade_percent
+fund_account	string	
+asset_prop	string	
+second_industry_code	string	
+second_industry_name	string	
+trade_value	decimal(19,4)	
+trade_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_block_trade_value
+fund_account	string	
+second_industry_code	string	
+second_industry_name	string	
+trade_value	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_business_num
+fund_account	string	
+buy_amount	int	
+sell_amount	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_cumulative_yield
+fund_account	string	
+cumulative_day_cost	decimal(19,4)	
+cumulative_yield	decimal(19,4)	
+income_balance_sum	decimal(19,4)	
+day_cost_sum	decimal(19,4)	
+count	int	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_day_position
+fund_account	string	
+position	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_daycost
+fund_account	string	
+day_cost	decimal(19,4)	
+total_asset	decimal(19,4)	
+last_asset	decimal(19,4)	
+total_in	decimal(19,4)	
+income_balance	decimal(19,4)	
+week	int	
+month	int	
+year	int	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_dayyield
+fund_account	string	
+day_yield	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_drawdown
+fund_account	string	
+drawdown	decimal(19,4)	
+yield_string_list	string	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_drawdown_rank
+fund_account	string	
+drawdown	decimal(19,4)	
+drawdown_rank_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_earning_ratio_avg
+fund_account	string	
+asset_prop	string	
+avg_earning_ratio	decimal(10,4)	
+earning_ratio_sum	decimal(19,4)	
+count	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_earning_ratio_percent
+fund_account	string	
+asset_prop	string	
+earning_ratio_type	int	
+earning_ratio_num	int	
+earning_ratio_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_fund_day_income_balance
+fund_account	string	
+asset_prop	string	
+market_value	decimal(19,4)	
+income_balance	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_fund_income_value
+fund_account	string	
+asset_prop	string	
+income_value	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_hold_cycle_list
+fund_account	string	
+asset_prop	string	
+stock_account	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+market_value	decimal(19,4)	
+cycle_list	array<struct<init_date:string,serial_no:string,order_str:string,buy_balance:decimal(19,4),buy_amount:decimal(19,4),sell_balance:decimal(19,4)
+,clear_balance:decimal(19,4),fare:decimal(19,4),cost_price:decimal(19,4),business_flag:string,repeat:int,end_flag:int>>	part_init_date	string	
+end_flag	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_hold_cycle_merge_list
+fund_account	string	
+asset_prop	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+market_value	decimal(19,4)	
+merge_list	array<struct<init_date:string,serial_no:string,order_str:string,buy_balance:decimal(19,4),buy_amount:decimal(19,4),sell_balance:decimal(19,4)
+,clear_balance:decimal(19,4),fare:decimal(19,4),cost_price:decimal(19,4),business_flag:string,repeat:int,end_flag:int>>	begin_serial_no	string	
+end_serial_no	string	
+begin_date	string	
+init_cost_price	decimal(19,4)	
+end_cost_price	decimal(19,4)	
+clear_balance	decimal(19,4)	
+part_init_date	string	
+end_flag	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_hold_cycle_split_list
+fund_account	string	
+asset_prop	string	
+stock_account	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+market_value	decimal(19,4)	
+cycle_split_list	array<array<struct<init_date:string,serial_no:string,order_str:string,buy_balance:decimal(19,4),buy_amount:decimal(19,4),sell_balance
+:decimal(19,4),clear_balance:decimal(19,4),fare:decimal(19,4),cost_price:decimal(19,4),business_flag:string,repeat:int,end_flag:int>>>	part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_hold_stock_earning_ratio
+fund_account	string	
+asset_prop	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+earning_ratio	decimal(10,4)	
+earning_ratio_type	int	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_hs300
+stock_code	string	
+day_price	decimal(19,4)	
+first_price	decimal(19,4)	
+day_ratio	decimal(10,4)	
+week_ratio	decimal(10,4)	
+month_ratio	decimal(10,4)	
+recent_month_ratio	decimal(10,4)	
+year_ratio	decimal(10,4)	
+ratio	decimal(10,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_income_detail
+fund_account	string	
+asset_prop	string	
+trade_num	int	
+win_num	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_investor_score
+score	decimal(10,2)	
+part_init_date	string	
+interval_type	int	
+score_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_investor_score_ratio
+fund_account	string	
+score_ratio	decimal(10,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_market_cumulative_data
+hs_yield	decimal(19,4)	
+sh_yield	decimal(19,4)	
+sz_yield	decimal(19,4)	
+gem_yield	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_market_daily_data
+shanghai_yield	decimal(19,4)	
+shanghai_close_price	decimal(19,4)	
+hs300_yield	decimal(19,4)	
+hs300_close_price	decimal(19,4)	
+shenzhen_yield	decimal(19,4)	
+shenzhen_close_price	decimal(19,4)	
+gem_yield	decimal(19,4)	
+gem_close_price	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_money_in_out
+fund_account	string	
+money_in	decimal(19,4)	
+money_out	decimal(19,4)	
+asset_in	decimal(19,4)	
+asset_out	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_net_inflow
+fund_account	string	
+net_inflow_value	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_recent_min_yield
+fund_account	string	
+max_cost	decimal(19,4)	
+recent_min_yield	decimal(19,4)	
+cost_list	string	
+recent_income_balance_sum	decimal(19,4)	
+first_cost	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_recent_yield
+fund_account	string	
+recent_cost	decimal(19,4)	
+recent_yield	decimal(19,4)	
+recent_cost_sum	decimal(19,4)	
+recent_income_balance_sum	decimal(19,4)	
+first_cost	decimal(19,4)	
+count	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_single_stock_daily_income_balance
+fund_account	string	
+asset_prop	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+last_market_value	decimal(19,4)	
+market_value	decimal(19,4)	
+market_amount	int	
+buy_balance	decimal(19,4)	
+buy_amount	int	
+sell_balance	decimal(19,4)	
+clear_balance	decimal(19,4)	
+fare	decimal(19,4)	
+bug_times	int	
+sell_times	int	
+income_balance	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_single_stock_dayprofit
+fund_account	string	
+asset_prop	string	
+stock_account	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+market_value	decimal(19,4)	
+last_market_value	decimal(19,4)	
+asset_in	decimal(19,4)	
+asset_out	decimal(19,4)	
+bonus	decimal(19,4)	
+bonus_fare	decimal(19,4)	
+day_income	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_single_stock_hold_days
+fund_account	string	
+asset_prop	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+hold_days	decimal(19,0)	
+hold_status	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_business_balance
+fund_account	string	
+asset_prop	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_business_balance	decimal(19,4)	
+buy_amount	int	
+sell_amount	int	
+trade_rate	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_dayprofit
+fund_account	string	
+asset_prop	string	
+stock_day_income_balance	decimal(19,4)	
+wit_day_income_balance	decimal(19,4)	
+fund_day_income_balance	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_hold_cycle
+fund_account	string	
+stock_account	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+begin_date	string	
+begin_serial_no	string	
+end_serial_no	string	
+init_cost_price	string	
+hold_days	int	
+fare	decimal(19,4)	
+max_cost	decimal(19,4)	
+sell_balance	decimal(19,4)	
+buy_balance	decimal(19,4)	
+buy_amount	decimal(19,4)	
+exchange_times	int	
+clear_balance	decimal(19,4)	
+stock_income_balance	decimal(19,4)	
+stock_income_rate	decimal(10,4)	
+avg_cost_price	decimal(19,4)	
+end_date	string	
+end_flag	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_hold_cycle_merge
+fund_account	string	
+asset_prop	string	
+money_type	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+begin_date	string	
+begin_serial_no	string	
+end_serial_no	string	
+init_cost_price	decimal(19,4)	
+end_cost_price	decimal(19,4)	
+hold_days	int	
+fare	decimal(19,4)	
+max_cost	decimal(19,4)	
+sell_balance	decimal(19,4)	
+buy_balance	decimal(19,4)	
+buy_amount	decimal(19,4)	
+exchange_times	int	
+buy_times	int	
+sell_times	int	
+clear_balance	decimal(19,4)	
+stock_income_balance	decimal(19,4)	
+stock_income_rate	decimal(10,4)	
+avg_cost_price	decimal(19,4)	
+end_date	string	
+end_flag	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_income_balance
+fund_account	string	
+asset_prop	string	
+stock_income_balance	decimal(19,4)	
+wit_income_balance	decimal(19,4)	
+fund_income_balance	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_income_detail
+fund_account	string	
+asset_prop	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+status	int	
+exchange_times	int	
+stock_income	decimal(19,4)	
+profit_income	decimal(19,4)	
+hold_days	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_interval_income
+fund_account	string	
+asset_prop	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+stock_name	string	
+stock_income	decimal(19,4)	
+hold_days	int	
+hold_status	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_market_value
+fund_account	string	
+stock_code	string	
+stock_type	string	
+exchange_type	string	
+market_value	decimal(19,4)	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_second_industry
+secumarket	string	
+secucode	string	
+second_industry_code	string	
+second_industry_name	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_select_score
+fund_account	string	
+picking_core	decimal(10,2)	
+timing_core	decimal(10,2)	
+e1	int	
+en	decimal(38,38)	
+ex	decimal(38,38)	
+er	decimal(38,38)	
+en2	decimal(38,38)	
+ern	decimal(38,38)	
+ex2	decimal(38,38)	
+erx	decimal(38,38)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stock_win_rate
+fund_account	string	
+asset_prop	string	
+win_rate	decimal(10,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_stockaccount_merge
+fund_account	string	
+exchange_type	string	
+stock_code	string	
+stock_type	string	
+stock_name	string	
+money_type	string	
+begin_date	string	
+end_date	string	
+stock_income_balance	decimal(19,4)	
+stock_income_rate	decimal(10,4)	
+stock_hold_cycle	decimal(19,0)	
+exchange_times	decimal(10,0)	
+status	string	
+buy_cost_price	decimal(19,4)	
+cost	decimal(19,4)	
+sum_business_balance	decimal(19,4)	
+sum_business_amount	decimal(19,0)	
+init_serial_no	string	
+end_serial_no	string	
+init_cost_price	decimal(10,4)	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_sz_income_percent
+fund_account	string	
+asset_prop	string	
+large_cap_income_percent	decimal(19,4)	
+middle_cap_income_percent	decimal(19,4)	
+small_cap_income_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_sz_trade_percent
+fund_account	string	
+asset_prop	string	
+large_cap_trade_percent	decimal(19,4)	
+middle_cap_trade_percent	decimal(19,4)	
+small_cap_trade_percent	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_tb_inside_income_value
+fund_account	string	
+income_value	decimal(19,4)	
+begin_balance	decimal(19,4)	
+end_balance	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_tb_outside_income_value
+fund_account	string	
+asset_prop	string	
+income_value	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_trade_rate
+fund_account	string	
+trade_rate	decimal(10,4)	
+trade_num	int	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_trans_discipline_score
+fund_account	string	
+asset_prop	string	
+score	decimal(10,2)	
+score_count	decimal(19,4)	
+count	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_trans_income_score
+fund_account	string	
+score	decimal(10,2)	
+score_sum	string	
+score_count	string	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_trans_timing_score
+fund_account	string	
+score	decimal(10,2)	
+score_type	string	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_weekyield
+fund_account	string	
+week_cost	decimal(19,4)	
+week_cost_sum	decimal(19,4)	
+week_yield	decimal(19,4)	
+income_balance_sum	decimal(19,4)	
+count	int	
+part_init_date	string	
+====================query_split====================
+====================table分割线====================
+====================query_split====================
+desc wt_customer.acct_wt_user_win_rate_over_ratio
+fund_account	string	
+asset_prop	string	
+over_ratio	decimal(19,4)	
+part_init_date	string	
+interval_type	int	
+====================query_split====================
+====================table分割线====================
+====================query_split====================

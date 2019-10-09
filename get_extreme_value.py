@@ -95,6 +95,7 @@ class ExtremeValue:
             if "TableNum" in line:
                 insert_data = "num"
                 num = 0
+                f.readline()
                 continue
             if insert_data == "num":
                 num = int(line.strip())
@@ -419,7 +420,7 @@ if __name__ == "__main__":
     try:
         sec = os.sys.argv[1]
     except IndexError as e:
-        sec = "caida"
+        sec = "zhongyou"
 
     # get config info
     config = __get_config(sec)
@@ -431,8 +432,7 @@ if __name__ == "__main__":
 
     extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file, distribution_statistics_file)
     # extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
-    # print(columns_file.replace(".sql", ".log"))
-    extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
-    extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    # extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
+    # extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
     extreme_value.extract_extreme_value_from_log(file_name=extreme_file.replace(".sql", ".log"))
-    extreme_value.generate_distribution_statistics_sql(file_name=distribution_statistics_file)
+    # extreme_value.generate_distribution_statistics_sql(file_name=distribution_statistics_file)

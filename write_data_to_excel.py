@@ -22,6 +22,8 @@ class WriteDataToExcel:
         id=e201120deca6b428e8ebfc9be1672ac3&sub=36CB2F77F63942ABBE08A668C378C101"""
         print(data)
         for table, info in data.items():
+            if "acct_wt_user_stock_select_score" in table:
+                print("Let's Debug.")
             # table information
             self.write_data("table_name", {"x": self.x, "y": self.y}, flag=True)
             self.write_data(table, {"x": 1, "y": 0}, flag=False)
@@ -47,6 +49,8 @@ class WriteDataToExcel:
             self.y = self.absolutely_pos_y
 
             for column, value_info in info.items():
+                if column == "er":
+                    pass
                 # column fields
                 if column == "num":
                     continue
@@ -57,7 +61,8 @@ class WriteDataToExcel:
                 self.absolutely_pos_x = self.x
                 self.absolutely_pos_y = self.y
 
-                temp_y = self.y
+                temp_y = self.y  # if there is no data, then temp_y will be equal to self.y
+                max_y = self.y  # if there is part of intervals is no data, then max_y is the new absolutely_y position.
                 for key in ["max", "min", "null"]:
                     # When key is null, then dealing specially.
                     if key == "null" and len(data[table][column][key]) == 0:
@@ -69,15 +74,20 @@ class WriteDataToExcel:
                         if key == "null":
                             self.write_data(value, {"x": self.x, "y": self.y}, flag=True)
                             self.y += 1
+                            max_y = max(max_y, self.y)
                             continue
                         for i, column_value in enumerate(value):
                             self.write_data(column_value, {"x": self.x, "y": self.y}, flag=True)
                             self.x += 1
                         self.y += 1
+                        max_y = max(max_y, self.y)
                     self.absolutely_pos_x = self.x
                 # deal with the table is no data
-                if temp_y == self.y:
+                if temp_y == max_y:
                     self.y += 1
+                # may be there is part of intervals is no data
+                else:
+                    self.y = max_y
                 self.absolutely_pos_y = self.y
                 self.x, self.absolutely_pos_x = 0, 0
         return self.wt.save(self.book_name)
@@ -109,7 +119,7 @@ class WriteDataToExcel:
 
 
 if __name__ == "__main__":
-    write_data_to_excel = WriteDataToExcel(book_name="Demo.xls")
+    write_data_to_excel = WriteDataToExcel(book_name="zhongyou.xls")
     data = write_data_to_excel.load_data_from_pickle(filename="data.pkl")
     write_data_to_excel.deal_data(data)
 

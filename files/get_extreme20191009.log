@@ -1,0 +1,871 @@
+-- TableNum:wt_customer.acct_wt_user_block_trade_percent
+select count(1) from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927
+1485542
+====================query_split====================
+-- wt_customer.acct_wt_user_block_trade_percent.asset_prop
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by asset_prop desc limit 1
+923500027	7	1
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by asset_prop desc limit 1
+919891347	7	2
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by asset_prop desc limit 1
+920200581	7	3
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by asset_prop desc limit 1
+910000903	7	4
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by asset_prop asc limit 1
+10003353	0	1
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by asset_prop asc limit 1
+10003353	0	2
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by asset_prop asc limit 1
+10002630	0	3
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by asset_prop asc limit 1
+10001840	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4  and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_block_trade_percent.second_industry_code
+select fund_account, second_industry_code as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by second_industry_code desc limit 1
+10000156	730200	1
+====================query_split====================
+select fund_account, second_industry_code as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by second_industry_code desc limit 1
+10110258	730200	2
+====================query_split====================
+select fund_account, second_industry_code as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by second_industry_code desc limit 1
+10110258	730200	3
+====================query_split====================
+select fund_account, second_industry_code as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by second_industry_code desc limit 1
+10002097	730200	4
+====================query_split====================
+select fund_account, second_industry_code as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by second_industry_code asc limit 1
+20119997	NULL	1
+====================query_split====================
+select fund_account, second_industry_code as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by second_industry_code asc limit 1
+19901017	NULL	2
+====================query_split====================
+select fund_account, second_industry_code as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by second_industry_code asc limit 1
+10020606	NULL	3
+====================query_split====================
+select fund_account, second_industry_code as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by second_industry_code asc limit 1
+19890597	NULL	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1  and second_industry_code is null limit 1
+10022362	NULL	1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2  and second_industry_code is null limit 1
+19901017	NULL	2
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3  and second_industry_code is null limit 1
+10000448	NULL	3
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4  and second_industry_code is null limit 1
+10011146	NULL	4
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_block_trade_percent.second_industry_name
+select fund_account, second_industry_name as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by second_industry_name desc limit 1
+19898290	黄金	1
+====================query_split====================
+select fund_account, second_industry_name as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by second_industry_name desc limit 1
+19889221	黄金	2
+====================query_split====================
+select fund_account, second_industry_name as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by second_industry_name desc limit 1
+19898290	黄金	3
+====================query_split====================
+select fund_account, second_industry_name as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by second_industry_name desc limit 1
+19891532	黄金	4
+====================query_split====================
+select fund_account, second_industry_name as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by second_industry_name asc limit 1
+20305641	NULL	1
+====================query_split====================
+select fund_account, second_industry_name as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by second_industry_name asc limit 1
+10022362	NULL	2
+====================query_split====================
+select fund_account, second_industry_name as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by second_industry_name asc limit 1
+19890597	NULL	3
+====================query_split====================
+select fund_account, second_industry_name as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by second_industry_name asc limit 1
+10007993	NULL	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1  and second_industry_name is null limit 1
+10022362	NULL	1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2  and second_industry_name is null limit 1
+19901017	NULL	2
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3  and second_industry_name is null limit 1
+10000448	NULL	3
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4  and second_industry_name is null limit 1
+10011146	NULL	4
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_block_trade_percent.trade_value
+select fund_account, trade_value as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by trade_value desc limit 1
+920604692	266297602.05	1
+====================query_split====================
+select fund_account, trade_value as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by trade_value desc limit 1
+920603566	1000977934.04	2
+====================query_split====================
+select fund_account, trade_value as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by trade_value desc limit 1
+920603566	1861454324.35	3
+====================query_split====================
+select fund_account, trade_value as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by trade_value desc limit 1
+920603566	2132176068.33	4
+====================query_split====================
+select fund_account, trade_value as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by trade_value asc limit 1
+19887135	0	1
+====================query_split====================
+select fund_account, trade_value as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by trade_value asc limit 1
+10002592	0	2
+====================query_split====================
+select fund_account, trade_value as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by trade_value asc limit 1
+10003943	0	3
+====================query_split====================
+select fund_account, trade_value as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by trade_value asc limit 1
+19893771	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1  and trade_value is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2  and trade_value is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3  and trade_value is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4  and trade_value is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_block_trade_percent.trade_percent
+select fund_account, trade_percent as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by trade_percent desc limit 1
+10110134	1	1
+====================query_split====================
+select fund_account, trade_percent as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by trade_percent desc limit 1
+10000483	1	2
+====================query_split====================
+select fund_account, trade_percent as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by trade_percent desc limit 1
+19879859	1	3
+====================query_split====================
+select fund_account, trade_percent as max_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by trade_percent desc limit 1
+10009127	1	4
+====================query_split====================
+select fund_account, trade_percent as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1 order by trade_percent asc limit 1
+10021662	0	1
+====================query_split====================
+select fund_account, trade_percent as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2 order by trade_percent asc limit 1
+10002592	0	2
+====================query_split====================
+select fund_account, trade_percent as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3 order by trade_percent asc limit 1
+10002630	0	3
+====================query_split====================
+select fund_account, trade_percent as min_value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4 order by trade_percent asc limit 1
+20114932	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 1  and trade_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 2  and trade_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 3  and trade_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_block_trade_percent where part_init_date = 20190927 and interval_type = 4  and trade_percent is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_trans_timing_score
+select count(1) from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927
+0
+====================query_split====================
+-- wt_customer.acct_wt_user_trans_timing_score.score
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 1 order by score desc limit 1
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 2 order by score desc limit 1
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 3 order by score desc limit 1
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 4 order by score desc limit 1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 1 order by score asc limit 1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 2 order by score asc limit 1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 3 order by score asc limit 1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 4 order by score asc limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 1  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 2  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 3  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_timing_score where part_init_date = 20190927 and interval_type = 4  and score is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_stock_win_rate
+select count(1) from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927
+360284
+====================query_split====================
+-- wt_customer.acct_wt_user_stock_win_rate.asset_prop
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1 order by asset_prop desc limit 1
+920601069	7	1
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2 order by asset_prop desc limit 1
+923500638	7	2
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3 order by asset_prop desc limit 1
+923600829	7	3
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4 order by asset_prop desc limit 1
+919882866	7	4
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1 order by asset_prop asc limit 1
+19889448	0	1
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2 order by asset_prop asc limit 1
+19881597	0	2
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3 order by asset_prop asc limit 1
+19897082	0	3
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4 order by asset_prop asc limit 1
+10021134	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4  and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_win_rate.win_rate
+select fund_account, win_rate as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1 order by win_rate desc limit 1
+19899671	1	1
+====================query_split====================
+select fund_account, win_rate as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2 order by win_rate desc limit 1
+20633206	1	2
+====================query_split====================
+select fund_account, win_rate as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3 order by win_rate desc limit 1
+91000683	1	3
+====================query_split====================
+select fund_account, win_rate as max_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4 order by win_rate desc limit 1
+20121279	1	4
+====================query_split====================
+select fund_account, win_rate as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1 order by win_rate asc limit 1
+91088977	0	1
+====================query_split====================
+select fund_account, win_rate as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2 order by win_rate asc limit 1
+20301909	0	2
+====================query_split====================
+select fund_account, win_rate as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3 order by win_rate asc limit 1
+19900399	0	3
+====================query_split====================
+select fund_account, win_rate as min_value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4 order by win_rate asc limit 1
+20724225	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 1  and win_rate is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 2  and win_rate is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 3  and win_rate is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_stock_win_rate where part_init_date = 20190927 and interval_type = 4  and win_rate is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_trans_discipline_score
+select count(1) from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927
+190368
+====================query_split====================
+-- wt_customer.acct_wt_user_trans_discipline_score.asset_prop
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by asset_prop desc limit 1
+923501951	7	1
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by asset_prop desc limit 1
+920107698	7	2
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by asset_prop desc limit 1
+923500025	7	3
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by asset_prop desc limit 1
+920301392	7	4
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by asset_prop asc limit 1
+20117157	0	1
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by asset_prop asc limit 1
+91095025	0	2
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by asset_prop asc limit 1
+86020338	0	3
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by asset_prop asc limit 1
+86020338	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4  and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_trans_discipline_score.score
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by score desc limit 1
+20114122	100	1
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by score desc limit 1
+91095025	100	2
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by score desc limit 1
+92003064	100	3
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by score desc limit 1
+20306357	100	4
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by score asc limit 1
+98031980	0	1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by score asc limit 1
+20108035	0	2
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by score asc limit 1
+20608146	0	3
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by score asc limit 1
+95024290	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4  and score is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_trans_discipline_score.score_count
+select fund_account, score_count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by score_count desc limit 1
+20200937	268	1
+====================query_split====================
+select fund_account, score_count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by score_count desc limit 1
+20200937	506	2
+====================query_split====================
+select fund_account, score_count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by score_count desc limit 1
+89018425	1002	3
+====================query_split====================
+select fund_account, score_count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by score_count desc limit 1
+85076853	2651	4
+====================query_split====================
+select fund_account, score_count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by score_count asc limit 1
+20300628	0	1
+====================query_split====================
+select fund_account, score_count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by score_count asc limit 1
+89018807	0	2
+====================query_split====================
+select fund_account, score_count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by score_count asc limit 1
+91000088	0	3
+====================query_split====================
+select fund_account, score_count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by score_count asc limit 1
+19882610	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1  and score_count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2  and score_count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3  and score_count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4  and score_count is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_trans_discipline_score.count
+select fund_account, count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by count desc limit 1
+20200937	269	1
+====================query_split====================
+select fund_account, count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by count desc limit 1
+20200937	508	2
+====================query_split====================
+select fund_account, count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by count desc limit 1
+89018425	1026	3
+====================query_split====================
+select fund_account, count as max_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by count desc limit 1
+85076853	2712	4
+====================query_split====================
+select fund_account, count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1 order by count asc limit 1
+20313034	0	1
+====================query_split====================
+select fund_account, count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2 order by count asc limit 1
+23211946	0	2
+====================query_split====================
+select fund_account, count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3 order by count asc limit 1
+20102222	0	3
+====================query_split====================
+select fund_account, count as min_value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4 order by count asc limit 1
+20308139	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 1  and count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 2  and count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 3  and count is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_trans_discipline_score where part_init_date = 20190927 and interval_type = 4  and count is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_all_score
+select count(1) from wt_customer.acct_wt_user_all_score where part_init_date = 20190927
+8501218
+====================query_split====================
+-- wt_customer.acct_wt_user_all_score.score
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 1 order by score desc limit 1
+923503782	100	1
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 2 order by score desc limit 1
+923503782	100	2
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 3 order by score desc limit 1
+923503782	100	3
+====================query_split====================
+select fund_account, score as max_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 4 order by score desc limit 1
+999002205	100	4
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 1 order by score asc limit 1
+20112661	15	1
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 2 order by score asc limit 1
+98005185	15	2
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 3 order by score asc limit 1
+9601001066	15	3
+====================query_split====================
+select fund_account, score as min_value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 4 order by score asc limit 1
+20112109	15	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 1  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 2  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 3  and score is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_all_score where part_init_date = 20190927 and interval_type = 4  and score is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_day_position
+select count(1) from wt_customer.acct_wt_user_day_position where part_init_date = 20190927
+415727
+====================query_split====================
+-- wt_customer.acct_wt_user_day_position.position
+select fund_account, position as max_value, """--""" as interval_type from wt_customer.acct_wt_user_day_position where part_init_date = 20190927 order by position desc limit 1
+97076797	1.5469	--
+====================query_split====================
+select fund_account, position as min_value, """--""" as interval_type from wt_customer.acct_wt_user_day_position where part_init_date = 20190927 order by position asc limit 1
+92067405	-0.0184	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_day_position where part_init_date = 20190927   and position is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_net_inflow
+select count(1) from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927
+1662930
+====================query_split====================
+-- wt_customer.acct_wt_user_net_inflow.net_inflow_value
+select fund_account, net_inflow_value as max_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 1 order by net_inflow_value desc limit 1
+20119969	50094898.28	1
+====================query_split====================
+select fund_account, net_inflow_value as max_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 2 order by net_inflow_value desc limit 1
+20119969	97322874.1	2
+====================query_split====================
+select fund_account, net_inflow_value as max_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 3 order by net_inflow_value desc limit 1
+95153086	152500000	3
+====================query_split====================
+select fund_account, net_inflow_value as max_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 4 order by net_inflow_value desc limit 1
+20604800	109480917.15	4
+====================query_split====================
+select fund_account, net_inflow_value as min_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 1 order by net_inflow_value asc limit 1
+83034478	NULL	1
+====================query_split====================
+select fund_account, net_inflow_value as min_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 2 order by net_inflow_value asc limit 1
+10110010	NULL	2
+====================query_split====================
+select fund_account, net_inflow_value as min_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 3 order by net_inflow_value asc limit 1
+10000324	NULL	3
+====================query_split====================
+select fund_account, net_inflow_value as min_value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 4 order by net_inflow_value asc limit 1
+95120014	NULL	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 1  and net_inflow_value is null limit 1
+83035965	NULL	1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 2  and net_inflow_value is null limit 1
+87021411	NULL	2
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 3  and net_inflow_value is null limit 1
+83070393	NULL	3
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_net_inflow where part_init_date = 20190927 and interval_type = 4  and net_inflow_value is null limit 1
+83032149	NULL	4
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_earning_ratio_percent
+select count(1) from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927
+915558
+====================query_split====================
+-- wt_customer.acct_wt_user_earning_ratio_percent.asset_prop
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by asset_prop desc limit 1
+920119882	7	1
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by asset_prop desc limit 1
+919885466	7	2
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by asset_prop desc limit 1
+910003298	7	3
+====================query_split====================
+select fund_account, asset_prop as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by asset_prop desc limit 1
+910012318	7	4
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by asset_prop asc limit 1
+10000645	0	1
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by asset_prop asc limit 1
+10001120	0	2
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by asset_prop asc limit 1
+10001695	0	3
+====================query_split====================
+select fund_account, asset_prop as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by asset_prop asc limit 1
+10000477	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3  and asset_prop is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4  and asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_earning_ratio_percent.earning_ratio_type
+select fund_account, earning_ratio_type as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_type desc limit 1
+10001727	6	1
+====================query_split====================
+select fund_account, earning_ratio_type as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_type desc limit 1
+10001886	6	2
+====================query_split====================
+select fund_account, earning_ratio_type as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_type desc limit 1
+10001886	6	3
+====================query_split====================
+select fund_account, earning_ratio_type as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_type desc limit 1
+10000477	6	4
+====================query_split====================
+select fund_account, earning_ratio_type as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_type asc limit 1
+10000477	0	1
+====================query_split====================
+select fund_account, earning_ratio_type as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_type asc limit 1
+20100942	0	2
+====================query_split====================
+select fund_account, earning_ratio_type as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_type asc limit 1
+91004135	0	3
+====================query_split====================
+select fund_account, earning_ratio_type as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_type asc limit 1
+19880018	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1  and earning_ratio_type is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2  and earning_ratio_type is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3  and earning_ratio_type is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4  and earning_ratio_type is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_earning_ratio_percent.earning_ratio_num
+select fund_account, earning_ratio_num as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_num desc limit 1
+19879918	1196	1
+====================query_split====================
+select fund_account, earning_ratio_num as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_num desc limit 1
+19879918	3422	2
+====================query_split====================
+select fund_account, earning_ratio_num as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_num desc limit 1
+19879918	6374	3
+====================query_split====================
+select fund_account, earning_ratio_num as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_num desc limit 1
+19879918	11683	4
+====================query_split====================
+select fund_account, earning_ratio_num as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_num asc limit 1
+19885003	0	1
+====================query_split====================
+select fund_account, earning_ratio_num as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_num asc limit 1
+19900317	0	2
+====================query_split====================
+select fund_account, earning_ratio_num as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_num asc limit 1
+19885185	0	3
+====================query_split====================
+select fund_account, earning_ratio_num as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_num asc limit 1
+20107569	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1  and earning_ratio_num is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2  and earning_ratio_num is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3  and earning_ratio_num is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4  and earning_ratio_num is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_earning_ratio_percent.earning_ratio_percent
+select fund_account, earning_ratio_percent as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_percent desc limit 1
+10003769	1	1
+====================query_split====================
+select fund_account, earning_ratio_percent as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_percent desc limit 1
+10003286	1	2
+====================query_split====================
+select fund_account, earning_ratio_percent as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_percent desc limit 1
+10001756	1	3
+====================query_split====================
+select fund_account, earning_ratio_percent as max_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_percent desc limit 1
+10002725	1	4
+====================query_split====================
+select fund_account, earning_ratio_percent as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1 order by earning_ratio_percent asc limit 1
+19887135	0	1
+====================query_split====================
+select fund_account, earning_ratio_percent as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2 order by earning_ratio_percent asc limit 1
+20110479	0	2
+====================query_split====================
+select fund_account, earning_ratio_percent as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3 order by earning_ratio_percent asc limit 1
+19914206	0	3
+====================query_split====================
+select fund_account, earning_ratio_percent as min_value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4 order by earning_ratio_percent asc limit 1
+20109042	0	4
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 1  and earning_ratio_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 2  and earning_ratio_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 3  and earning_ratio_percent is null limit 1
+====================query_split====================
+select fund_account, null as value, interval_type from wt_customer.acct_wt_user_earning_ratio_percent where part_init_date = 20190927 and interval_type = 4  and earning_ratio_percent is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
+-- TableNum:wt_customer.acct_wt_user_stock_hold_cycle_merge
+select count(1) from wt_customer.acct_wt_user_stock_hold_cycle_merge 
+2796335
+====================query_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.asset_prop
+select fund_account, asset_prop as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by asset_prop desc limit 1
+923600456	7	--
+====================query_split====================
+select fund_account, asset_prop as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by asset_prop asc limit 1
+19878853	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where asset_prop is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.stock_name
+select fund_account, stock_name as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_name desc limit 1
+96005066	ＳＯＨＯ中国	--
+====================query_split====================
+select fund_account, stock_name as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_name asc limit 1
+20717647	*ST 中绒	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where stock_name is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.begin_date
+select fund_account, begin_date as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by begin_date desc limit 1
+19889448	20190930	--
+====================query_split====================
+select fund_account, begin_date as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by begin_date asc limit 1
+19880526	20180920	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where begin_date is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.begin_serial_no
+select fund_account, begin_serial_no as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by begin_serial_no desc limit 1
+19880526	XXXXXXXXXX	--
+====================query_split====================
+select fund_account, begin_serial_no as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by begin_serial_no asc limit 1
+99017047	0000000000	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where begin_serial_no is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.end_serial_no
+select fund_account, end_serial_no as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by end_serial_no desc limit 1
+99999999	XXXXXXXXXX	--
+====================query_split====================
+select fund_account, end_serial_no as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by end_serial_no asc limit 1
+9501000048	0000000001	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where end_serial_no is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.init_cost_price
+select fund_account, init_cost_price as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by init_cost_price desc limit 1
+19901049	1182	--
+====================query_split====================
+select fund_account, init_cost_price as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by init_cost_price asc limit 1
+20602819	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where init_cost_price is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.end_cost_price
+select fund_account, end_cost_price as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by end_cost_price desc limit 1
+19901049	1182	--
+====================query_split====================
+select fund_account, end_cost_price as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by end_cost_price asc limit 1
+83039807	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where end_cost_price is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.hold_days
+select fund_account, hold_days as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by hold_days desc limit 1
+19879285	249	--
+====================query_split====================
+select fund_account, hold_days as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by hold_days asc limit 1
+19889897	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where hold_days is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.fare
+select fund_account, fare as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by fare desc limit 1
+89060001	412125.52	--
+====================query_split====================
+select fund_account, fare as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by fare asc limit 1
+96006698	-3.85	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where fare is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.max_cost
+select fund_account, max_cost as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by max_cost desc limit 1
+83065319	871575215.44	--
+====================query_split====================
+select fund_account, max_cost as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by max_cost asc limit 1
+19878853	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where max_cost is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.sell_balance
+select fund_account, sell_balance as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by sell_balance desc limit 1
+23500525	1197855142.29	--
+====================query_split====================
+select fund_account, sell_balance as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by sell_balance asc limit 1
+95029291	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where sell_balance is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.buy_balance
+select fund_account, buy_balance as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_balance desc limit 1
+83065319	871575215.44	--
+====================query_split====================
+select fund_account, buy_balance as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_balance asc limit 1
+19889897	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where buy_balance is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.buy_amount
+select fund_account, buy_amount as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_amount desc limit 1
+83065319	97600808	--
+====================query_split====================
+select fund_account, buy_amount as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_amount asc limit 1
+19880149	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where buy_amount is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.exchange_times
+select fund_account, exchange_times as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by exchange_times desc limit 1
+95041651	4479	--
+====================query_split====================
+select fund_account, exchange_times as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by exchange_times asc limit 1
+20305977	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where exchange_times is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.buy_times
+select fund_account, buy_times as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_times desc limit 1
+95041651	2424	--
+====================query_split====================
+select fund_account, buy_times as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by buy_times asc limit 1
+19878853	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where buy_times is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.sell_times
+select fund_account, sell_times as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by sell_times desc limit 1
+95041651	2055	--
+====================query_split====================
+select fund_account, sell_times as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by sell_times asc limit 1
+20305977	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where sell_times is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.clear_balance
+select fund_account, clear_balance as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by clear_balance desc limit 1
+997076705	99014320.52	--
+====================query_split====================
+select fund_account, clear_balance as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by clear_balance asc limit 1
+23200051	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where clear_balance is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.stock_income_balance
+select fund_account, stock_income_balance as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_income_balance desc limit 1
+23500525	1197855142.29	--
+====================query_split====================
+select fund_account, stock_income_balance as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_income_balance asc limit 1
+95154520	-91300000	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where stock_income_balance is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.stock_income_rate
+select fund_account, stock_income_rate as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_income_rate desc limit 1
+91051752	127590.1471	--
+====================query_split====================
+select fund_account, stock_income_rate as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by stock_income_rate asc limit 1
+9101000123	-1	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where stock_income_rate is null limit 1
+====================query_split====================
+====================column_split====================
+-- wt_customer.acct_wt_user_stock_hold_cycle_merge.avg_cost_price
+select fund_account, avg_cost_price as max_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by avg_cost_price desc limit 1
+19901049	1182	--
+====================query_split====================
+select fund_account, avg_cost_price as min_value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge order by avg_cost_price asc limit 1
+19902064	0	--
+====================query_split====================
+select fund_account, null as value, """--""" as interval_type from wt_customer.acct_wt_user_stock_hold_cycle_merge where avg_cost_price is null limit 1
+====================query_split====================
+====================column_split====================
+====================table_split====================
