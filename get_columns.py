@@ -19,9 +19,6 @@ if __name__ == "__main__":
     extreme_file = config.get(section=sec, option="extreme_file")
     table_file = config.get(section=sec, option="jobs")
     distribution_statistics_file = config.get(section=sec, option="distribution_statistics_file")
-    null_sql_flag = config.get(section=sec, option="null_sql_flag")
-    fund_account = config.get(section=sec, option="fund_account")
 
     extreme_value = ExtremeValue(part_init_date, columns_file, extreme_file, distribution_statistics_file)
-    extreme_value.extract_columns_from_log(file_name=columns_file.replace(".sql", ".log"))
-    extreme_value.generate_get_extreme_value_sql(file_name=extreme_file)
+    extreme_value.generate_get_columns_hive_sql(table_file=table_file, file_name=columns_file)
